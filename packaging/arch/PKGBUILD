@@ -1,0 +1,19 @@
+# Maintainer: Estevam Souza <contato@estevamsouza.com.br>
+pkgname=pytrack-desktop-bin
+pkgver=1.0.1
+pkgrel=1
+pkgdesc="PyTrack — App desktop oficial para dominar Python"
+arch=('x86_64')
+url="https://www.pytrack.com.br"
+license=('MIT')
+depends=('webkit2gtk-4.1' 'gtk3' 'libappindicator-gtk3')
+provides=('pytrack-desktop')
+conflicts=('pytrack-desktop')
+options=('!strip')
+source=("https://github.com/estevam5s/pytrack-desktop/releases/download/desktop-v${pkgver}/PyTrack_${pkgver}_amd64.AppImage")
+sha256sums=('SKIP')
+
+package() {
+    cd "$srcdir"
+    install -Dm755 "PyTrack_${pkgver}_amd64.AppImage" "$pkgdir/usr/bin/pytrack"
+}

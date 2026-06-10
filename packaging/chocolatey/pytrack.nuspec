@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pytrack</id>
+    <version>1.0.1</version>
+    <title>PyTrack Desktop</title>
+    <authors>Estevam Souza / PyTrack</authors>
+    <projectUrl>https://www.pytrack.com.br</projectUrl>
+    <iconUrl>https://www.pytrack.com.br/new-logo.png</iconUrl>
+    <licenseUrl>https://github.com/estevam5s/pytrack-desktop/blob/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>App desktop oficial da PyTrack — domine todo o ecossistema Python.</description>
+    <tags>python pytrack education ide</tags>
+    <packageSourceUrl>https://github.com/estevam5s/pytrack-desktop</packageSourceUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
