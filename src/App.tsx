@@ -16,10 +16,12 @@ import { IaSettings } from "@/screens/Ia";
 import { Ide } from "@/screens/Ide";
 import { Conteudos } from "@/screens/Conteudos";
 import { Placeholder } from "@/screens/Placeholder";
+import { UpdateChecker } from "@/components/UpdateChecker";
 
 function Shell() {
   return (
     <div className="flex h-screen overflow-hidden">
+      <UpdateChecker />
       <Sidebar />
       <main className="flex-1 overflow-y-auto">
         <Routes>

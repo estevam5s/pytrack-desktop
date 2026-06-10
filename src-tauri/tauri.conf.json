@@ -35,19 +35,31 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ],
-    "copyright": "© 2026 PyTrack",
+    "copyright": "\u00a9 2026 PyTrack",
     "category": "Education",
-    "shortDescription": "Aprenda Python — do básico à carreira",
-    "longDescription": "App desktop oficial da PyTrack: trilhas, +5.000 exercícios, IDE Python, comunidade e carreira.",
+    "shortDescription": "Aprenda Python \u2014 do b\u00e1sico \u00e0 carreira",
+    "longDescription": "App desktop oficial da PyTrack: trilhas, +5.000 exerc\u00edcios, IDE Python, comunidade e carreira.",
     "linux": {
-      "deb": { "depends": [] }
+      "deb": {
+        "depends": []
+      }
     },
     "macOS": {
       "minimumSystemVersion": "10.15"
     },
     "windows": {
-      "nsis": { "installMode": "currentUser" }
-    }
+      "nsis": {
+        "installMode": "currentUser"
+      }
+    },
+    "createUpdaterArtifacts": true
   },
-  "plugins": {}
+  "plugins": {
+    "updater": {
+      "endpoints": [
+        "https://github.com/estevam5s/pytrack-desktop/releases/latest/download/latest.json"
+      ],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDExRUQxOERDRkY0MDc0NTIKUldSU2RFRC8zQmp0RVpLY2ZRZ1BOQUdXamhlanpTaGNCWG55OW1NNUtHaGxoU1NYeHZWQUNmMkcK"
+    }
+  }
 }
