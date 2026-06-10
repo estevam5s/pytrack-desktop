@@ -63,3 +63,17 @@ jobs:
           releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}
+
+  # avisa todos os usuários da plataforma sobre a nova versão (uma única vez)
+  notify:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref_name, 'desktop-v')
+    steps:
+      - name: Broadcast nova versão
+        run: |
+          VER="${GITHUB_REF_NAME#desktop-v}"
+          curl -s -X POST "https://www.pytrack.com.br/api/broadcast" \
+            -H "Authorization: Bearer ${{ secrets.BROADCAST_SECRET }}" \
+            -H "Content-Type: application/json" \
+            -d "{\"title\":\"🖥️ App Desktop v${VER} disponível!\",\"body\":\"Uma nova versão do PyTrack Desktop foi publicada para Windows, macOS e Linux. Atualize ou baixe agora.\",\"link\":\"/apps\",\"type\":\"success\"}"
