@@ -57,6 +57,10 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e [V
 
 > [Releases](https://github.com/estevam5s/pytrack-desktop/releases) · disponível em `/aplicativo`
 
+### [1.0.1] — 2026-06-10
+#### Adicionado
+- 🔄 **Atualização automática (Tauri Updater)**: o app verifica novas versões ao abrir e oferece "Atualizar e reiniciar" — com binários **assinados** (chave pública embutida) e manifesto `latest.json`.
+
 ### [1.0.0] — 2026-06-10
 #### Adicionado
 - App nativo cross‑platform (**~7 MB**), instaladores **.msi/.exe** (Windows), **.dmg** (macOS) e **.AppImage/.deb** (Linux).
