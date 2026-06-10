@@ -71,3 +71,35 @@ Os instaladores vão para a rota **`/aplicativo`** (tabela `app_releases`, `plat
 ## 🔜 Próximos
 
 Command palette (Ctrl+K), multi-painel (lição + IDE), notificações nativas, updater assinado, i18n, tutorial/cookies na 1ª abertura.
+
+## 🐳 Docker
+
+Rode o app desktop **no navegador** (sem instalar nada localmente) via noVNC:
+
+```bash
+docker run --rm -p 6080:6080 ghcr.io/estevam5s/pytrack-desktop:latest
+```
+
+Depois abra **http://localhost:6080** no navegador. A imagem empacota a versão Linux
+(`.deb`) num ambiente X virtual (Xvfb + Fluxbox) servido por noVNC/websockify.
+
+Build local:
+
+```bash
+cd aplicativos/desktop
+docker build --build-arg VERSION=1.0.1 -t pytrack-desktop .
+docker run --rm -p 6080:6080 pytrack-desktop
+```
+
+A imagem é publicada automaticamente no **GitHub Container Registry (GHCR)** pelo
+workflow `.github/workflows/docker.yml` a cada tag `desktop-v*`.
+
+## 💻 Instalação via CLI / curl
+
+```bash
+# Linux / macOS
+curl -fsSL https://www.pytrack.com.br/install.sh | sh
+
+# Windows (PowerShell)
+irm https://www.pytrack.com.br/install.ps1 | iex
+```
